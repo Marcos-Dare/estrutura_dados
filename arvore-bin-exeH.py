@@ -27,22 +27,23 @@ class BinaryTree:
         if node is None:
             node = self.root
         if node.left:
-            self.simetric_traversal(node.left)
-        print(node)
+            self.postorder_traversal(node.left)
         if node.right:
-            self.simetric_traversal(node.right)
-            print(node.right)
+            self.postorder_traversal(node.right)
+        print(node)
+
 
     def height(self, node=None):
         if node is None:
             node = self.root
         if node is None:
-            return -1
-
-        left_height = self.height(node.left) if node.left else -1
-        right_height = self.height(node.right) if node.right else -1
-
+            return 0
+    
+        left_height = self.height(node.left) if node.left else 0
+        right_height = self.height(node.right) if node.right else 0
+    
         return 1 + max(left_height, right_height)
+
 
 
 
